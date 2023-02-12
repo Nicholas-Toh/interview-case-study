@@ -13,13 +13,14 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('users', function (Blueprint $table) {
+        Schema::create('products', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
-            $table->string('email')->unique();
-            $table->timestamp('email_verified_at')->nullable();
-            $table->string('password');
-            $table->rememberToken();
+            $table->foreignId('parent_id')->constrained('products')->onDelete('cascade');
+            $table->string('name')->default("");
+            $table->string('sku')->unique();
+            $table->string('type');
+            $table->text('description')->default("");
+            $table->decimal('price', 14, 4)->default(0);
             $table->timestamps();
             $table->datetime('deleted_at')->nullable()->default(null);
         });
@@ -32,6 +33,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('users');
+        Schema::dropIfExists('products');
     }
 };
