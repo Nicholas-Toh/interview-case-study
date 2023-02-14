@@ -20,7 +20,7 @@
                         class="border border-slate-400 rounded @error('name') focus:border-rose-600 @else focus:border-sky-400 @enderror"
                         placeholder="John Doe" required>
                     @error('name')
-                        <span class="text-rose-600 dark:text-rose-500 text-sm">{{ $message }}</span>
+                        <p class="text-rose-600 dark:text-rose-500 text-sm">{{ $message }}</p>
                     @enderror
                 </div>
                 <div class="mb-4">
@@ -29,7 +29,7 @@
                         class="border border-slate-400 rounded @error('email') focus:border-rose-600 @else focus:border-sky-400 @enderror"
                         placeholder="john@example.com" required>
                     @error('email')
-                        <span class="text-rose-600 dark:text-rose-500 text-sm">{{ $message }}</span>
+                        <p class="text-rose-600 dark:text-rose-500 text-sm">{{ $message }}</p>
                     @enderror
                 </div>
 
@@ -39,7 +39,7 @@
                         class="border border-slate-400 rounded @error('password') focus:border-rose-600 @else focus:border-sky-400 @enderror"
                         required>
                     @error('password')
-                        <span class="text-rose-600 dark:text-rose-500 text-sm">{{ $message }}</span>
+                        <p class="text-rose-600 dark:text-rose-500 text-sm">{{ $message }}</p>
                     @enderror
                 </div>
 
@@ -49,7 +49,7 @@
                         class="border border-slate-400 rounded @error('confirm_password') focus:border-rose-600 @else focus:border-sky-400 @enderror"
                         required>
                     @error('confirm_password')
-                        <span class="text-rose-600 dark:text-rose-500 text-sm">{{ $message }}</span>
+                        <p class="block text-rose-600 dark:text-rose-500 text-sm">{{ $message }}</p>
                     @enderror
                 </div>
                 <div class="flex items-center justify-between">
