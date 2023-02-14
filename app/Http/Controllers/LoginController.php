@@ -27,7 +27,7 @@ class LoginController extends Controller
         ) {
             $request->session()->regenerate();
 
-            return redirect()->intended('homepage');
+            return redirect()->intended(route('homepage'));
         }
 
         return back()->withErrors([
