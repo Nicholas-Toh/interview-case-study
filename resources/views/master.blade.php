@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+<html class="h-full" lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 
 <head>
     <meta charset="utf-8">
@@ -8,7 +8,7 @@
     <title>@yield('title')</title>
 </head>
 
-<body>
+<body class="@yield('body-class')">
     @yield('body')
 </body>
 
