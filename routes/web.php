@@ -18,13 +18,12 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', [HomePageController::class, 'index'])->name('homepage');
 
-Route::prefix('register')->controller(RegisterController::class)->group(function () {
+Route::prefix('register')->controller(Web\RegisterController::class)->group(function () {
     Route::get('', 'index')->name('register');
     Route::post('', 'store')->name('register.store');
 });
 
-Route::prefix('login')->controller(LoginController::class)->group(function () {
+Route::prefix('login')->controller(Web\LoginController::class)->group(function () {
     Route::get('', 'index')->name('login');
     Route::post('', 'store')->name('login.store');
 });
-
