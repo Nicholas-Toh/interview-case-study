@@ -1,8 +1,8 @@
 <?php
 
-use App\Http\Controllers\HomePageController;
-use App\Http\Controllers\LoginController;
-use App\Http\Controllers\RegisterController;
+use App\Http\Controllers\Web\HomePageController;
+use App\Http\Controllers\Web\LoginController;
+use App\Http\Controllers\Web\RegisterController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -18,12 +18,12 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', [HomePageController::class, 'index'])->name('homepage');
 
-Route::prefix('register')->controller(Web\RegisterController::class)->group(function () {
+Route::prefix('register')->controller(RegisterController::class)->group(function () {
     Route::get('', 'index')->name('register');
     Route::post('', 'store')->name('register.store');
 });
 
-Route::prefix('login')->controller(Web\LoginController::class)->group(function () {
+Route::prefix('login')->controller(LoginController::class)->group(function () {
     Route::get('', 'index')->name('login');
     Route::post('', 'store')->name('login.store');
 });
