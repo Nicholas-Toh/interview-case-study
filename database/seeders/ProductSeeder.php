@@ -24,6 +24,11 @@ class ProductSeeder extends Seeder
                     [
                         'sku' => 'ZB-001-14inch-silver',
                         'price' => 3000.00,
+                        'images' => [
+                            [
+                                'path' => asset('/images/asus-zenbook-silver.png')
+                            ]
+                        ],
                         'attributes' => [
                             [
                                 'name' => 'Size',
@@ -42,6 +47,11 @@ class ProductSeeder extends Seeder
                     [
                         'sku' => 'ZB-001-15inch-silver',
                         'price' => 3100.00,
+                        'images' => [
+                            [
+                                'path' => asset('/images/asus-zenbook-silver.png')
+                            ]
+                        ],
                         'attributes' => [
                             [
                                 'name' => 'Size',
@@ -60,6 +70,11 @@ class ProductSeeder extends Seeder
                     [
                         'sku' => 'ZB-001-14inch-black',
                         'price' => 3000.00,
+                        'images' => [
+                            [
+                                'path' => asset('/images/asus-zenbook-black.png')
+                            ]
+                        ],
                         'attributes' => [
                             [
                                 'name' => 'Size',
@@ -78,6 +93,11 @@ class ProductSeeder extends Seeder
                     [
                         'sku' => 'ZB-001-15inch-black',
                         'price' => 3100.00,
+                        'images' => [
+                            [
+                                'path' => asset('/images/asus-zenbook-black.png')
+                            ]
+                        ],
                         'attributes' => [
                             [
                                 'name' => 'Size',
@@ -103,6 +123,11 @@ class ProductSeeder extends Seeder
                     [
                         'sku' => 'HPAV-001-14inch-red',
                         'price' => 2800.00,
+                        'images' => [
+                            [
+                                'path' => asset('/images/hp-pavillion-red.png')
+                            ]
+                        ],
                         'attributes' => [
                             [
                                 'name' => 'Size',
@@ -121,6 +146,11 @@ class ProductSeeder extends Seeder
                     [
                         'sku' => 'HPAV-001-15inch-red',
                         'price' => 3000.00,
+                        'images' => [
+                            [
+                                'path' => asset('/images/hp-pavillion-red.png')
+                            ]
+                        ],
                         'attributes' => [
                             [
                                 'name' => 'Size',
@@ -139,6 +169,11 @@ class ProductSeeder extends Seeder
                     [
                         'sku' => 'HPAV-001-14inch-silver',
                         'price' => 2800.00,
+                        'images' => [
+                            [
+                                'path' => asset('/images/hp-pavillion-silver.png')
+                            ]
+                        ],
                         'attributes' => [
                             [
                                 'name' => 'Size',
@@ -157,6 +192,11 @@ class ProductSeeder extends Seeder
                     [
                         'sku' => 'HPAV-001-15inch-silver',
                         'price' => 3000.00,
+                        'images' => [
+                            [
+                                'path' => asset('/images/hp-pavillion-red.png')
+                            ]
+                        ],
                         'attributes' => [
                             [
                                 'name' => 'Size',
@@ -185,6 +225,11 @@ class ProductSeeder extends Seeder
                     [
                         'sku' => 'SG-009-lilac_purple',
                         'price' => 2000.00,
+                        'images' => [
+                            [
+                                'path' => asset('/images/s9-purple.png')
+                            ]
+                        ],
                         'attributes' => [
                             [
                                 'name' => 'Colour',
@@ -197,6 +242,11 @@ class ProductSeeder extends Seeder
                     [
                         'sku' => 'SG-009-midnight_black',
                         'price' => 2000.00,
+                        'images' => [
+                            [
+                                'path' => asset('/images/s9-black.png')
+                            ]
+                        ],
                         'attributes' => [
                             [
                                 'name' => 'Colour',
@@ -209,6 +259,11 @@ class ProductSeeder extends Seeder
                     [
                         'sku' => 'SG-009-coral_blue',
                         'price' => 2000.00,
+                        'images' => [
+                            [
+                                'path' => asset('/images/s9-blue.png')
+                            ]
+                        ],
                         'attributes' => [
                             [
                                 'name' => 'Colour',
@@ -229,6 +284,11 @@ class ProductSeeder extends Seeder
                     [
                         'sku' => 'SN-010-aura_glow',
                         'price' => 3000.00,
+                        'images' => [
+                            [
+                                'path' => asset('/images/sn10-glow.png')
+                            ]
+                        ],
                         'attributes' => [
                             [
                                 'name' => 'Colour',
@@ -241,6 +301,11 @@ class ProductSeeder extends Seeder
                     [
                         'sku' => 'SN-010-aura_white',
                         'price' => 3000.00,
+                        'images' => [
+                            [
+                                'path' => asset('/images/sn10-white.png')
+                            ]
+                        ],
                         'attributes' => [
                             [
                                 'name' => 'Colour',
@@ -253,6 +318,11 @@ class ProductSeeder extends Seeder
                     [
                         'sku' => 'SN-010-aura_black',
                         'price' => 3000.00,
+                        'images' => [
+                            [
+                                'path' => asset('/images/sn10-black.png')
+                            ]
+                        ],
                         'attributes' => [
                             [
                                 'name' => 'Colour',
@@ -265,7 +335,7 @@ class ProductSeeder extends Seeder
                 ],
             ],
             [
-                'name' => 'Samsung Galaxy A59',
+                'name' => 'Samsung Galaxy s59',
                 'sku' => 'SG-068',
                 'description' => 'New condition • No returns, but backed by eBay Money back guarantee',
                 'category' => 'samsung',
@@ -273,6 +343,11 @@ class ProductSeeder extends Seeder
                     [
                         'sku' => 'SG-068-blue',
                         'price' => 658.00,
+                        'images' => [
+                            [
+                                'path' => asset('/images/s59-blue.png')
+                            ]
+                        ],
                         'attributes' => [
                             [
                                 'name' => 'Colour',
@@ -285,6 +360,11 @@ class ProductSeeder extends Seeder
                     [
                         'sku' => 'SG-068-black',
                         'price' => 658.00,
+                        'images' => [
+                            [
+                                'path' => asset('/images/s59-black.png')
+                            ]
+                        ],
                         'attributes' => [
                             [
                                 'name' => 'Colour',
@@ -297,6 +377,11 @@ class ProductSeeder extends Seeder
                     [
                         'sku' => 'SG-068-white',
                         'price' => 658.00,
+                        'images' => [
+                            [
+                                'path' => asset('/images/s59-white.png')
+                            ]
+                        ],
                         'attributes' => [
                             [
                                 'name' => 'Colour',
@@ -317,6 +402,11 @@ class ProductSeeder extends Seeder
                     [
                         'sku' => 'LG-V10-H900-opal_blue',
                         'price' => 159.00,
+                        'images' => [
+                            [
+                                'path' => asset('/images/lg-blue.png')
+                            ]
+                        ],
                         'attributes' => [
                             [
                                 'name' => 'Colour',
@@ -329,6 +419,11 @@ class ProductSeeder extends Seeder
                     [
                         'sku' => 'LG-V10-H900-space_black',
                         'price' => 159.00,
+                        'images' => [
+                            [
+                                'path' => asset('/images/lg-black.png')
+                            ]
+                        ],
                         'attributes' => [
                             [
                                 'name' => 'Colour',
@@ -349,6 +444,11 @@ class ProductSeeder extends Seeder
                     [
                         'sku' => 'HW-E001-gray',
                         'price' => 300.00,
+                        'images' => [
+                            [
+                                'path' => asset('/images/hw-gray.png')
+                            ]
+                        ],
                         'attributes' => [
                             [
                                 'name' => 'Colour',
@@ -396,9 +496,12 @@ class ProductSeeder extends Seeder
             $product->categories()->attach($laptopCategory->id);
             foreach ($data['variations'] as $variationData) {
                 $attributeData = $variationData['attributes'];
+                $imageData = $variationData['images'];
                 unset($variationData['attributes']);
+                unset($variationData['images']);
                 $variation = $product->variations()->create($variationData);
                 $variation->attributes()->createMany($attributeData);
+                $variation->images()->createMany($imageData);
             }
         }
 
@@ -418,9 +521,12 @@ class ProductSeeder extends Seeder
             }
             foreach ($data['variations'] as $variationData) {
                 $attributeData = $variationData['attributes'];
+                $imageData = $variationData['images'];
                 unset($variationData['attributes']);
+                unset($variationData['images']);
                 $variation = $product->variations()->create($variationData);
                 $variation->attributes()->createMany($attributeData);
+                $variation->images()->createMany($imageData);
             }
         }
     }
