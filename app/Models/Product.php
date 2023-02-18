@@ -19,7 +19,6 @@ class Product extends Model
         'name',
         'sku',
         'description',
-        'price',
     ];
 
     /**
@@ -43,11 +42,15 @@ class Product extends Model
     ];
 
     public function variations() {
-        return $this->hasMany(Product::class, 'parent_id');
+        return $this->hasMany(ProductVariation::class, 'product_id');
     }
 
     public function attributes() {
-        return $this->hasMany(ProductAttribute::class, 'attribute_option_id');
+        return $this->hasManyThrough(ProductVariation::class, ProductAttribute::class, 'product_id', 'variation_id');
+    }
+
+    public function categories() {
+        return $this->belongsToMany(ProductCategory::class);
     }
 
     public function images() {
