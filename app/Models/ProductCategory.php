@@ -9,6 +9,7 @@ class ProductCategory extends Model
 {
     use SoftDeletes;
 
+    public $timestamps = false;
     /**
      * The attributes that are mass assignable.
      *
