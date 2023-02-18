@@ -87,7 +87,7 @@ class ProductSeeder extends Seeder
                             ],
                             [
                                 'name' => 'Colour',
-                                'slug' => 'colour',
+                                'slug' => 'colour', 
                                 'value_label' => 'Black',
                                 'value' => 'black',
                             ],
@@ -370,7 +370,7 @@ class ProductSeeder extends Seeder
             'name' => 'Smartphones',
             'slug' => 'smartphones',
         ]);
-        $smartphoneCategory->children()->create([
+        $smartphoneCategory->children()->createMany([
             [
                 'name' => 'Samsung',
                 'slug' => 'samsung',
@@ -390,17 +390,23 @@ class ProductSeeder extends Seeder
         $huaweiCategory = ProductCategory::whereSlug('huawei')->get()->first();
 
         foreach ($laptops as $data) {
-            $product = Product::create($data);
-            $product->categories()->attach($laptopCategory);
+            $productData = $data;
+            unset($productData['variations']);
+            $product = Product::create($productData);
+            $product->categories()->attach($laptopCategory->id);
             foreach ($data['variations'] as $variationData) {
+                $attributeData = $variationData['attributes'];
+                unset($variationData['attributes']);
                 $variation = $product->variations()->create($variationData);
-                $variation->attributes()->create($variationData['attributes']);
+                $variation->attributes()->createMany($attributeData);
             }
         }
 
         foreach ($smartphones as $data) {
-            $product = Product::create($data);
-
+            $productData = $data;
+            unset($productData['category']);
+            unset($productData['variations']);
+            $product = Product::create($productData);
             if ($data['category'] === 'samsung') {
                 $product->categories()->attach($samsungCategory);
             }
@@ -411,8 +417,10 @@ class ProductSeeder extends Seeder
                 $product->categories()->attach($huaweiCategory);
             }
             foreach ($data['variations'] as $variationData) {
+                $attributeData = $variationData['attributes'];
+                unset($variationData['attributes']);
                 $variation = $product->variations()->create($variationData);
-                $variation->attributes()->create($variationData['attributes']);
+                $variation->attributes()->createMany($attributeData);
             }
         }
     }
