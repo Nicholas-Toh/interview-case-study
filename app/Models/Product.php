@@ -54,7 +54,7 @@ class Product extends Model
     }
 
     public function images() {
-        return $this->hasMany(ProductImage::class);
+        return $this->hasManyThrough(ProductVariation::class, ProductImage::class, 'product_id', 'variation_id');
     }
     
     public function eligible_users() {
