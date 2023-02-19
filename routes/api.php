@@ -20,5 +20,5 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 });
 
 Route::prefix('catalog')->controller(CatalogController::class)->group(function () {
-    Route::get('', 'index')->name('catalog');
+    Route::get('', 'index')->name('api.catalog');
 });
