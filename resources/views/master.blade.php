@@ -14,6 +14,7 @@
     @yield('body')
 </body>
 
+@routes
 @vite(['resources/css/app.css', 'resources/js/app.js'])
 
 @stack('css')
