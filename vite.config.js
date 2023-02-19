@@ -31,4 +31,11 @@ export default defineConfig({
             },
         }),
     ],
+    resolve: {
+        alias: {
+            "@components": __dirname + "/resources/js/components",
+            "@pages": __dirname + "/resources/js/pages",
+            "@utils": __dirname + "/resources/js/utils",
+        },
+    },
 });
