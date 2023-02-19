@@ -16,7 +16,15 @@ class ProductImage extends Model
         'path',
     ];
 
+    protected $appends = [
+        'public_path',
+    ];
+
     public function product() {
         return $this->belongsTo(ProductVariation::class);
+    }
+
+    public function getPublicPathAttribute() {
+        return asset($this->path);
     }
 }

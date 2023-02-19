@@ -5,6 +5,7 @@ namespace App\Models;
 use App\Enums\ProductType;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
+use Illuminate\Support\Facades\DB;
 
 class Product extends Model
 {
@@ -54,7 +55,7 @@ class Product extends Model
     }
 
     public function images() {
-        return $this->hasManyThrough(ProductVariation::class, ProductImage::class, 'product_id', 'variation_id');
+        return $this->hasManyThrough(ProductImage::class, ProductVariation::class, 'product_id', 'variation_id');
     }
     
     public function eligible_users() {
