@@ -5,7 +5,12 @@
 @section('body-class', 'bg-gray-200 h-full w-full m-0')
 
 @section('body')
-    <div class="flex justify-center content-center h-full w-full">
+    <div class="flex justify-center mt-20">
+        <div class="w-24 mb-10">
+            <img src="{{ asset('/images/supplycart-logo.png') }}">
+        </div>
+    </div>
+    <div class="flex justify-center w-full flex-col">
         <div class="m-auto w-full max-w-xs bg-white px-8 py-10 shadow-md rounded">
             <div class="mb-4">
                 <p class="text-2xl">
