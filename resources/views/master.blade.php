@@ -9,10 +9,10 @@
 </head>
 
 <body class="@yield('body-class')">
+    @yield('header')
+    <div id="app"></div>
     @yield('body')
 </body>
-
-<script type="text/javascript" src=""></script>
 
 @vite(['resources/css/app.css', 'resources/js/app.js'])
 
