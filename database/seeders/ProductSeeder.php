@@ -26,7 +26,7 @@ class ProductSeeder extends Seeder
                         'price' => 3000.00,
                         'images' => [
                             [
-                                'path' => asset('/images/asus-zenbook-silver.png')
+                                'path' => '/images/asus-zenbook-silver.png'
                             ]
                         ],
                         'attributes' => [
@@ -49,7 +49,7 @@ class ProductSeeder extends Seeder
                         'price' => 3100.00,
                         'images' => [
                             [
-                                'path' => asset('/images/asus-zenbook-silver.png')
+                                'path' => '/images/asus-zenbook-silver.png'
                             ]
                         ],
                         'attributes' => [
@@ -72,7 +72,7 @@ class ProductSeeder extends Seeder
                         'price' => 3000.00,
                         'images' => [
                             [
-                                'path' => asset('/images/asus-zenbook-black.png')
+                                'path' => '/images/asus-zenbook-black.png'
                             ]
                         ],
                         'attributes' => [
@@ -95,7 +95,7 @@ class ProductSeeder extends Seeder
                         'price' => 3100.00,
                         'images' => [
                             [
-                                'path' => asset('/images/asus-zenbook-black.png')
+                                'path' => '/images/asus-zenbook-black.png'
                             ]
                         ],
                         'attributes' => [
@@ -125,7 +125,7 @@ class ProductSeeder extends Seeder
                         'price' => 2800.00,
                         'images' => [
                             [
-                                'path' => asset('/images/hp-pavillion-red.png')
+                                'path' => '/images/hp-pavillion-red.jpg'
                             ]
                         ],
                         'attributes' => [
@@ -148,7 +148,7 @@ class ProductSeeder extends Seeder
                         'price' => 3000.00,
                         'images' => [
                             [
-                                'path' => asset('/images/hp-pavillion-red.png')
+                                'path' => '/images/hp-pavillion-red.jpg'
                             ]
                         ],
                         'attributes' => [
@@ -171,7 +171,7 @@ class ProductSeeder extends Seeder
                         'price' => 2800.00,
                         'images' => [
                             [
-                                'path' => asset('/images/hp-pavillion-silver.png')
+                                'path' => '/images/hp-pavillion-silver.jpg'
                             ]
                         ],
                         'attributes' => [
@@ -194,7 +194,7 @@ class ProductSeeder extends Seeder
                         'price' => 3000.00,
                         'images' => [
                             [
-                                'path' => asset('/images/hp-pavillion-red.png')
+                                'path' => '/images/hp-pavillion-red.jpg'
                             ]
                         ],
                         'attributes' => [
@@ -227,7 +227,7 @@ class ProductSeeder extends Seeder
                         'price' => 2000.00,
                         'images' => [
                             [
-                                'path' => asset('/images/s9-purple.png')
+                                'path' => '/images/s9-purple.jpg'
                             ]
                         ],
                         'attributes' => [
@@ -244,7 +244,7 @@ class ProductSeeder extends Seeder
                         'price' => 2000.00,
                         'images' => [
                             [
-                                'path' => asset('/images/s9-black.png')
+                                'path' => '/images/s9-black.jpg'
                             ]
                         ],
                         'attributes' => [
@@ -261,7 +261,7 @@ class ProductSeeder extends Seeder
                         'price' => 2000.00,
                         'images' => [
                             [
-                                'path' => asset('/images/s9-blue.png')
+                                'path' => '/images/s9-blue.jpg'
                             ]
                         ],
                         'attributes' => [
@@ -286,7 +286,7 @@ class ProductSeeder extends Seeder
                         'price' => 3000.00,
                         'images' => [
                             [
-                                'path' => asset('/images/sn10-glow.png')
+                                'path' => '/images/sn10-glow.jpg'
                             ]
                         ],
                         'attributes' => [
@@ -303,7 +303,7 @@ class ProductSeeder extends Seeder
                         'price' => 3000.00,
                         'images' => [
                             [
-                                'path' => asset('/images/sn10-white.png')
+                                'path' => '/images/sn10-white.jpg'
                             ]
                         ],
                         'attributes' => [
@@ -320,7 +320,7 @@ class ProductSeeder extends Seeder
                         'price' => 3000.00,
                         'images' => [
                             [
-                                'path' => asset('/images/sn10-black.png')
+                                'path' => '/images/sn10-black.jpg'
                             ]
                         ],
                         'attributes' => [
@@ -345,7 +345,7 @@ class ProductSeeder extends Seeder
                         'price' => 658.00,
                         'images' => [
                             [
-                                'path' => asset('/images/s59-blue.png')
+                                'path' => '/images/s59-blue.jpg'
                             ]
                         ],
                         'attributes' => [
@@ -362,7 +362,7 @@ class ProductSeeder extends Seeder
                         'price' => 658.00,
                         'images' => [
                             [
-                                'path' => asset('/images/s59-black.png')
+                                'path' => '/images/s59-black.jpg'
                             ]
                         ],
                         'attributes' => [
@@ -379,7 +379,7 @@ class ProductSeeder extends Seeder
                         'price' => 658.00,
                         'images' => [
                             [
-                                'path' => asset('/images/s59-white.png')
+                                'path' => '/images/s59-white.jpg'
                             ]
                         ],
                         'attributes' => [
@@ -404,7 +404,7 @@ class ProductSeeder extends Seeder
                         'price' => 159.00,
                         'images' => [
                             [
-                                'path' => asset('/images/lg-blue.png')
+                                'path' => '/images/lg-blue.jpg'
                             ]
                         ],
                         'attributes' => [
@@ -421,7 +421,7 @@ class ProductSeeder extends Seeder
                         'price' => 159.00,
                         'images' => [
                             [
-                                'path' => asset('/images/lg-black.png')
+                                'path' => '/images/lg-black.jpg'
                             ]
                         ],
                         'attributes' => [
@@ -446,7 +446,7 @@ class ProductSeeder extends Seeder
                         'price' => 300.00,
                         'images' => [
                             [
-                                'path' => asset('/images/hw-gray.png')
+                                'path' => '/images/hw-gray.jpg'
                             ]
                         ],
                         'attributes' => [
