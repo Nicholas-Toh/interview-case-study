@@ -12,7 +12,8 @@ class CatalogController extends ResourceController
 {
     public function index(Request $request) {
         
-        return Product::with(['variations', 'attributes', 'images', 'categories'])
+        return Product::with(['variations', 'unique_attribute_values', 'variations.images', 'categories'])
+            ->whereHas('variations')
             ->when(Auth::id(), function ($query, $id) {
                 $query
                     ->join('product_user', 'products.id', '=', 'product_user.product_id')
