@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Web\HomePageController;
 use App\Http\Controllers\Web\LoginController;
+use App\Http\Controllers\Web\LogoutController;
 use App\Http\Controllers\Web\RegisterController;
 use Illuminate\Support\Facades\Route;
 
@@ -16,7 +17,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', [HomePageController::class, 'index'])->name('homepage');
+Route::get('/', [HomePageController::class, 'index'])->middleware('auth')->name('homepage');
 
 Route::prefix('register')->controller(RegisterController::class)->group(function () {
     Route::get('', 'index')->name('register');
@@ -27,3 +28,6 @@ Route::prefix('login')->controller(LoginController::class)->group(function () {
     Route::get('', 'index')->name('login');
     Route::post('', 'store')->name('login.store');
 });
+
+
+Route::get('logout', [LogoutController::class, 'index'])->name('logout');
