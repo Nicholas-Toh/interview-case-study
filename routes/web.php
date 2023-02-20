@@ -4,6 +4,7 @@ use App\Http\Controllers\Web\HomePageController;
 use App\Http\Controllers\Web\LoginController;
 use App\Http\Controllers\Web\LogoutController;
 use App\Http\Controllers\Web\RegisterController;
+use App\Models\Product;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -17,7 +18,14 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', [HomePageController::class, 'index'])->middleware('auth')->name('homepage');
+Route::group(['middleware' => ['auth']], function () {
+    Route::get('/', [HomePageController::class, 'index'])->name('homepage');
+    Route::get('/catalog', [HomePageController::class, 'index'])->name('catalog');
+    Route::get('/catalog/{product:sku}', function (Product $product) {
+        return view('catalog_details');
+    })->name('catalog.details');
+
+});
 
 Route::prefix('register')->controller(RegisterController::class)->group(function () {
     Route::get('', 'index')->name('register');
