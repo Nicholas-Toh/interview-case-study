@@ -10,6 +10,7 @@
             <p>
                 Welcome back, {{ auth()->user()->name }}!
             </p>
+            <p><a href="{{ route('logout') }}">Click here to logout</a></p>
         </div>
     </div>
 </div>
