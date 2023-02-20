@@ -1,5 +1,4 @@
-import { createApp } from "vue";
-import App from "@components/home/App.vue";
+import Catalog from "@components/Catalog.vue";
 
-let app = createApp(App);
+app.component("catalog", Catalog);
 app.mount("#app");

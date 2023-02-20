@@ -11,8 +11,7 @@
 
 <body class="@yield('body-class')">
     @yield('header')
-    <div id="app"></div>
-    @yield('body')
+    <div id="app">@yield('body')</div>
 </body>
 
 @stack('css')

@@ -36,6 +36,8 @@ export default defineConfig({
             "@components": __dirname + "/resources/js/components",
             "@pages": __dirname + "/resources/js/pages",
             "@utils": __dirname + "/resources/js/utils",
+            "@plugins": __dirname + "/resources/js/plugins",
+            vue: "vue/dist/vue.esm-bundler.js",
         },
     },
 });

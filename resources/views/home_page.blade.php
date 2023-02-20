@@ -5,3 +5,7 @@
 @push('script')
     @vite(['resources/js/pages/home.js'])
 @endpush
+
+@section('body')
+    <Catalog />
+@endsection

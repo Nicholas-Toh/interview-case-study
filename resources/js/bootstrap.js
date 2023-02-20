@@ -34,4 +34,7 @@ window.axios.defaults.headers.common["X-Requested-With"] = "XMLHttpRequest";
 //     enabledTransports: ['ws', 'wss'],
 // });
 
-window.route = route;
+import { createApp } from "vue";
+import ZiggyVue from "@plugins/Ziggy";
+
+window.app = createApp().use(ZiggyVue);
