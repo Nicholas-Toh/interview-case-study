@@ -112,6 +112,14 @@ class CartService
         });
     }
 
+    public function deleteCartItem(CartItem $cartItem): bool|null {
+        $this->cartValidator->validate($cartItem->cart);
+
+        return DB::transaction(function () use ($cartItem) {
+            return $cartItem->delete();
+        });
+    }
+
     public function checkoutCurrentUserCart(array $billingAddress, array $shippingAddress): Document {
         return $this->checkoutCart($this->getCurrentUserCart(), $billingAddress, $shippingAddress);
     }
