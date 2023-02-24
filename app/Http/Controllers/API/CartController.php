@@ -2,14 +2,15 @@
 
 namespace App\Http\Controllers\API;
 
+use App\Http\Controllers\Controller;
 use App\Http\Controllers\ResourceController;
 use App\Http\Requests\AddToCartRequest;
 use App\Http\Requests\CheckoutCartRequest;
 use App\Http\Requests\UpdateCartItemQuantityRequest;
 use App\Http\Services\CartService;
-use Illuminate\Http\Request;
+use App\Models\CartItem;
 
-class CartController
+class CartController extends Controller
 {
     public function __construct(protected CartService $cartService) {}
 
@@ -18,15 +19,25 @@ class CartController
     }
 
     public function addToCart(AddToCartRequest $request) {
-        $this->cartService->addToCurrentUserCart($request->quantity, $request->product_id, $request->variation_id);
+        $cart = $this->cartService->addToCurrentUserCart($request->quantity, $request->product_id, $request->variation_id);
 
         return response([
-            'message' => 'Successfully added to cart.'
+            'message' => 'Successfully added to cart.',
+            'data' => [
+                'item_count' => $cart->items->count(),
+                'items' => $cart->items,
+            ]
         ]);
     }
 
     public function updateQuantity(UpdateCartItemQuantityRequest $request) {
-        
+        $cartItem = $this->cartService->updateCartItemQuantity(CartItem::find($request->cart_item_id), $request->quantity);
+
+        return response([
+            'data' => [
+                'item' => $cartItem
+            ]
+        ]);
     }
 
     public function checkout(CheckoutCartRequest $request) {
