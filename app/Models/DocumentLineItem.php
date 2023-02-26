@@ -13,9 +13,9 @@ class DocumentLineItem extends Model
      */
     protected $fillable = [
         'document_id',
-        'product_id',
         'product_name',
         'product_sku',
+        'unit_price',
         'quantity',
         'total',
     ];
@@ -32,9 +32,5 @@ class DocumentLineItem extends Model
 
     public function document() {
         return $this->belongsTo(Document::class);
-    }
-
-    public function product() {
-        return $this->belongsTo(Product::class);
     }
 }

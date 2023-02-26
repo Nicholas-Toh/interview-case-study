@@ -16,9 +16,9 @@ return new class extends Migration
         Schema::create('document_line_items', function (Blueprint $table) {
             $table->id();
             $table->foreignId('document_id')->constrained('documents');
-            $table->foreignId('product_id')->constrained('products');
             $table->string('product_name');
             $table->string('product_sku');
+            $table->decimal('unit_price', 14, 4)->default(0);
             $table->double('quantity')->default(0);
             $table->decimal('total', 14, 4)->default(0);
             $table->timestamps();

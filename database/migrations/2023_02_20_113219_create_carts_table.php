@@ -13,12 +13,11 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('documents', function (Blueprint $table) {
+        Schema::create('carts', function (Blueprint $table) {
             $table->id();
-            $table->string('status');
-            $table->string('type');
-            $table->decimal('total', 14, 4)->default(0);
-            $table->foreignId('customer_id')->constrained('users');
+            $table->foreignId('user_id')->constrained('users')->nullable()->default(null);
+            $table->string('status', 50)->default('pending_checkout');
+            $table->string('session_id', 50)->nullable();
             $table->timestamps();
             $table->datetime('deleted_at')->nullable()->default(null);
         });
@@ -31,6 +30,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('documents');
+        Schema::dropIfExists('carts');
     }
 };

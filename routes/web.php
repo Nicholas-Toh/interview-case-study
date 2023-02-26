@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\API\OrderHistoryController;
 use App\Http\Controllers\Web\HomePageController;
 use App\Http\Controllers\Web\LoginController;
 use App\Http\Controllers\Web\LogoutController;
@@ -40,3 +41,8 @@ Route::prefix('login')->controller(LoginController::class)->group(function () {
 
 
 Route::get('logout', [LogoutController::class, 'index'])->name('logout');
+
+Route::prefix('history')->controller(OrderHistoryController::class)->group(function () {
+    Route::get('', 'index')->name('history');
+    Route::get('{document}', 'show')->name('history.show');
+});

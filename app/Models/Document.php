@@ -20,7 +20,7 @@ class Document extends Model
         'status',
         'type',
         'total',
-        'user_id',
+        'customer_id',
     ];
 
     /**
@@ -49,6 +49,14 @@ class Document extends Model
     }
 
     public function customer() {
-        return $this->belongsTo(User::class, 'user_id');
+        return $this->belongsTo(User::class);
+    }
+
+    public function billing_address() {
+        return $this->hasOne(DocumentBillingAddress::class);
+    }
+
+    public function shipping_address() {
+        return $this->hasOne(DocumentShippingAddress::class);
     }
 }
