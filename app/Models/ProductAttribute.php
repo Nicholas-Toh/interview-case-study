@@ -19,7 +19,11 @@ class ProductAttribute extends Model
         'value_label',
     ];
 
-    public function variation() {
-        return $this->belongsTo(ProductVariation::class, 'variation_id');
+    public function variations() {
+        return $this->belongsToMany(ProductVariation::class);
+    }
+
+    public function product() {
+        return $this->belongsTo(Product::class);
     }
 }
