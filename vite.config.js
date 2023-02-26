@@ -9,6 +9,7 @@ export default defineConfig({
                 "resources/css/app.css",
                 "resources/js/app.js",
                 "resources/js/pages/home.js",
+                "resources/js/pages/catalog_details.js",
             ],
             refresh: true,
         }),
