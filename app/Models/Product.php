@@ -50,6 +50,10 @@ class Product extends Model
     //     return $this->hasManyThrough(ProductAttribute::class, ProductVariation::class, 'product_id', 'variation_id');
     // }
 
+    public function attributes() {
+        return $this->hasMany(ProductAttribute::class);
+    }
+
     // public function unique_attribute_values() {
     //     return $this
     //         ->attributes()
@@ -58,6 +62,10 @@ class Product extends Model
     //         ->orderBy(DB::raw("`product_attributes`.`value`"))
     //         ->orderBy(DB::raw("`product_attributes`.`slug`"));
     // }
+
+    public function attribute_options() {
+        return $this->hasManyThrough(ProductAttributeOption::class, ProductAttribute::class);
+    }
 
     public function categories() {
         return $this->belongsToMany(ProductCategory::class, 'product_product_category', 'product_id', 'category_id');

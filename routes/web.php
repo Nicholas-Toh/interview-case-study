@@ -23,7 +23,7 @@ Route::group(['middleware' => ['auth']], function () {
     Route::get('/', [HomePageController::class, 'index'])->name('homepage');
     Route::get('/catalog', [HomePageController::class, 'index'])->name('catalog');
     Route::get('/catalog/{product:sku}', function (Product $product) {
-        $product->load(['variations.images', 'variations.attributes', 'unique_attribute_values']);
+        $product->load(['variations.images', 'variations.attribute_options', 'attributes.options']);
         return view('catalog_details', ['product' => $product]);
     })->name('catalog.details');
 

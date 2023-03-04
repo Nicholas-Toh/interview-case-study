@@ -4,7 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class ProductAttribute extends Model
+class ProductAttributeOption extends Model
 {
     public $timestamps = false;
     /**
@@ -17,8 +17,12 @@ class ProductAttribute extends Model
         'slug',
     ];
 
-    public function options() {
-        return $this->hasMany(ProductAttributeOption::class);
+    public function attribute() {
+        return $this->belongsTo(ProductAttribute::class);
+    }
+
+    public function variations() {
+        return $this->belongsToMany(ProductVariation::class);
     }
 
     public function product() {

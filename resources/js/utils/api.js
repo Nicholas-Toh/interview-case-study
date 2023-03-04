@@ -9,7 +9,7 @@ export async function post(url, payload) {
 export async function processData(method, url, payload) {
     try {
         const response = await method(url, payload);
-        return response.data.data;
+        return response.data;
     } catch (error) {
         console.log(error);
         throw error;

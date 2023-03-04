@@ -7,3 +7,9 @@ export function keyBy(arr, key) {
 
     return temp;
 }
+
+export function ksort(arr, key, asc = true) {
+    return arr.sort((a, b) => {
+        return asc ? a[key] > b[key] : a[key] < b[key];
+    })
+}

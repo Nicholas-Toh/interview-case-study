@@ -12,7 +12,7 @@ class CatalogController extends ResourceController
 {
     public function index(Request $request) {
         
-        return Product::with(['variations', 'unique_attribute_values', 'variations.images', 'categories'])
+        return Product::with(['images', 'attribute_options', 'categories'])
             ->whereHas('variations')
             ->when(Auth::id(), function ($query, $id) {
                 $query

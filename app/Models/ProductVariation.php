@@ -28,8 +28,8 @@ class ProductVariation extends Model
         return $this->belongsTo(Product::class);
     }
 
-    public function attributes() {
-        return $this->hasMany(ProductAttribute::class);
+    public function attribute_options() {
+        return $this->belongsToMany(ProductAttributeOption::class);
     }
 
     public function images() {

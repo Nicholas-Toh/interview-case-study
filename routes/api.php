@@ -27,5 +27,5 @@ Route::prefix('cart')->controller(CatalogController::class)->group(function () {
     Route::get('', 'show')->name('api.cart.show');
     Route::post('add-item', 'addToCart')->name('api.cart.add_to_cart');
     Route::post('update-quantity', 'updateQuantity')->name('api.cart.update_quantity');
-    Route::post('checkout', 'updateQuantity')->name('api.cart.update_quantity');
+    Route::post('checkout', 'checkout')->name('api.cart.update_quantity');
 });
