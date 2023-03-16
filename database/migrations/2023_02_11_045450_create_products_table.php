@@ -17,7 +17,7 @@ return new class extends Migration
             $table->id();
             $table->string('name')->default("");
             $table->string('sku')->unique();
-            $table->text('description')->default("");
+            $table->string('description', 1200)->default("");
             $table->timestamps();
             $table->datetime('deleted_at')->nullable()->default(null);
         });
