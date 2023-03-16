@@ -12,8 +12,8 @@
     </div>
     <div class="flex justify-center w-full flex-col">
         <div class="mx-auto">
-            <div class="w-full max-w-xs bg-white px-8 py-10 shadow-md rounded">
-                <div class="mb-4">
+            <div class="w-full max-w-sm bg-white px-8 py-10 shadow-md rounded">
+                <div class="mb-4 text-center">
                     <p class="text-2xl">
                         Login
                     </p>
@@ -45,6 +45,9 @@
                             type="button">
                             Login
                         </button>
+                        <a href="{{ route('register') }}"
+                            class="underline text-sm text-gray-600 hover:text-gray-900 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">Register
+                            here</a>
                     </div>
                 </form>
             </div>
