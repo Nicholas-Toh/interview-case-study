@@ -15,11 +15,105 @@ class ProductSeeder extends Seeder
      */
     public function run()
     {
+        $attributes = [
+            'size' => [
+                'name' => 'Size',
+                'slug' => 'size',
+            ],
+            'color' => [
+                'name' => 'Color',
+                'slug' => 'color',
+            ],
+        ];
+        $attributeOptions = [
+            '14_inch' => [
+                'name' => '14 Inch',
+                'value' => '14_inch',
+            ],
+            '15_inch' => [
+                'name' => '15 Inch',
+                'value' => '15_inch',
+            ],
+            'silver' => [
+                'name' => 'Silver',
+                'value' => 'silver',
+            ],
+            'black' => [
+                'name' => 'Black',
+                'value' => 'black',
+            ],
+            'white' => [
+                'name' => 'White',
+                'value' => 'white',
+            ],
+            'red' => [
+                'name' => 'Red',
+                'value' => 'red',
+            ],
+            'blue' => [
+                'name' => 'Blue',
+                'value' => 'blue',
+            ],
+            'gray' => [
+                'name' => 'Gray',
+                'value' => 'gray',
+            ],
+            'lilac_purple' => [
+                'name' => 'Lilac Purple',
+                'value' => 'lilac_purple',
+            ],
+            'midnight_black' => [
+                'name' => 'Midnight Black',
+                'value' => 'midnight_black',
+            ],
+            'coral_blue' => [
+                'name' => 'Coral Blue',
+                'value' => 'coral_blue',
+            ],
+            'aura_glow' => [
+                'name' => 'Aura Glow',
+                'value' => 'aura_glow',
+            ],
+            'aura_white' => [
+                'name' => 'Aura White',
+                'value' => 'aura_white',
+            ],
+            'aura_black' => [
+                'name' => 'Aura Black',
+                'value' => 'aura_black',
+            ],
+            'opal_blue' => [
+                'name' => 'Opal Blue',
+                'value' => 'opal_blue',
+            ],
+            'space_black' => [
+                'name' => 'Space Black',
+                'value' => 'space_black',
+            ],
+        ];
         $laptops = [
             [
                 'name' => 'Zenbook',
                 'sku' => 'ZB-001',
                 'description' => "Elegant, trendy, thin and light, it's the best laptop for on-the-go work and entertainment.",
+                'attributes' => [
+                    [
+                        'slug' => 'size',
+                        'value' => '14_inch',
+                    ],
+                    [
+                        'slug' => 'color',
+                        'value' => 'silver',
+                    ],
+                    [
+                        'slug' => 'size',
+                        'value' => '15_inch',
+                    ],
+                    [
+                        'slug' => 'color',
+                        'value' => 'black',
+                    ],
+                ],
                 'variations' => [
                     [
                         'sku' => 'ZB-001-14inch-silver',
@@ -30,18 +124,8 @@ class ProductSeeder extends Seeder
                             ]
                         ],
                         'attributes' => [
-                            [
-                                'name' => 'Size',
-                                'slug' => 'size',
-                                'value_label' => '14 Inch',
-                                'value' => '14-inch',
-                            ],
-                            [
-                                'name' => 'Colour',
-                                'slug' => 'colour',
-                                'value_label' => 'Silver',
-                                'value' => 'silver',
-                            ],
+                            '14_inch',
+                            'silver',
                         ]
                     ],
                     [
@@ -53,18 +137,8 @@ class ProductSeeder extends Seeder
                             ]
                         ],
                         'attributes' => [
-                            [
-                                'name' => 'Size',
-                                'slug' => 'size',
-                                'value_label' => '15 Inch',
-                                'value' => '15-inch',
-                            ],
-                            [
-                                'name' => 'Colour',
-                                'slug' => 'colour',
-                                'value_label' => 'Silver',
-                                'value' => 'silver',
-                            ],
+                            '15_inch',
+                            'silver',
                         ]
                     ],
                     [
@@ -76,18 +150,8 @@ class ProductSeeder extends Seeder
                             ]
                         ],
                         'attributes' => [
-                            [
-                                'name' => 'Size',
-                                'slug' => 'size',
-                                'value_label' => '14 Inch',
-                                'value' => '14-inch',
-                            ],
-                            [
-                                'name' => 'Colour',
-                                'slug' => 'colour',
-                                'value_label' => 'Black',
-                                'value' => 'black',
-                            ],
+                            '14_inch',
+                            'black',
                         ]
                     ],
                     [
@@ -99,18 +163,8 @@ class ProductSeeder extends Seeder
                             ]
                         ],
                         'attributes' => [
-                            [
-                                'name' => 'Size',
-                                'slug' => 'size',
-                                'value_label' => '15 Inch',
-                                'value' => '15-inch',
-                            ],
-                            [
-                                'name' => 'Colour',
-                                'slug' => 'colour', 
-                                'value_label' => 'Black',
-                                'value' => 'black',
-                            ],
+                            '15_inch',
+                            'black',
                         ]
                     ],
                 ]
@@ -119,6 +173,24 @@ class ProductSeeder extends Seeder
                 'name' => 'Hp Pavilion',
                 'sku' => 'HPAV-001',
                 'description' => "HP Pavilion is a line of consumer-oriented laptop and desktop computers produced by HP Inc.",
+                'attributes' => [
+                    [
+                        'slug' => 'size',
+                        'value' => '14_inch',
+                    ],
+                    [
+                        'slug' => 'color',
+                        'value' => 'silver',
+                    ],
+                    [
+                        'slug' => 'size',
+                        'value' => '15_inch',
+                    ],
+                    [
+                        'slug' => 'color',
+                        'value' => 'red',
+                    ],
+                ],
                 'variations' => [
                     [
                         'sku' => 'HPAV-001-14inch-red',
@@ -129,18 +201,8 @@ class ProductSeeder extends Seeder
                             ]
                         ],
                         'attributes' => [
-                            [
-                                'name' => 'Size',
-                                'slug' => 'size',
-                                'value_label' => '14 Inch',
-                                'value' => '14-inch',
-                            ],
-                            [
-                                'name' => 'Colour',
-                                'slug' => 'colour',
-                                'value_label' => 'Red',
-                                'value' => 'red',
-                            ],
+                            '14_inch',
+                            'red',
                         ]
                     ],
                     [
@@ -152,18 +214,8 @@ class ProductSeeder extends Seeder
                             ]
                         ],
                         'attributes' => [
-                            [
-                                'name' => 'Size',
-                                'slug' => 'size',
-                                'value_label' => '15 Inch',
-                                'value' => '15-inch',
-                            ],
-                            [
-                                'name' => 'Colour',
-                                'slug' => 'colour',
-                                'value_label' => 'Red',
-                                'value' => 'red',
-                            ],
+                            '15_inch',
+                            'red',
                         ]
                     ],
                     [
@@ -175,18 +227,8 @@ class ProductSeeder extends Seeder
                             ]
                         ],
                         'attributes' => [
-                            [
-                                'name' => 'Size',
-                                'slug' => 'size',
-                                'value_label' => '14 Inch',
-                                'value' => '14-inch',
-                            ],
-                            [
-                                'name' => 'Colour',
-                                'slug' => 'colour',
-                                'value_label' => 'Silver',
-                                'value' => 'silver',
-                            ],
+                            '14_inch',
+                            'silver',
                         ]
                     ],
                     [
@@ -198,18 +240,8 @@ class ProductSeeder extends Seeder
                             ]
                         ],
                         'attributes' => [
-                            [
-                                'name' => 'Size',
-                                'slug' => 'size',
-                                'value_label' => '15 Inch',
-                                'value' => '15-inch',
-                            ],
-                            [
-                                'name' => 'Colour',
-                                'slug' => 'colour',
-                                'value_label' => 'Silver',
-                                'value' => 'silver',
-                            ],
+                            '15_inch',
+                            'silver',
                         ]
                     ],
                 ]
@@ -221,6 +253,20 @@ class ProductSeeder extends Seeder
                 'sku' => 'SG-009',
                 'description' => "A brand new, sealed Lilac Purple Verizon Global Unlocked Galaxy S9 by Samsung. This is an upgrade. Clean ESN and activation ready.",
                 'category' => 'samsung',
+                'attributes' => [
+                    [
+                        'slug' => 'color',
+                        'value' => 'midnight_black',
+                    ],
+                    [
+                        'slug' => 'color',
+                        'value' => 'lilac_purple',
+                    ],
+                    [
+                        'slug' => 'color',
+                        'value' => 'coral_blue',
+                    ],
+                ],
                 'variations' => [
                     [
                         'sku' => 'SG-009-lilac_purple',
@@ -231,12 +277,7 @@ class ProductSeeder extends Seeder
                             ]
                         ],
                         'attributes' => [
-                            [
-                                'name' => 'Colour',
-                                'slug' => 'colour',
-                                'value_label' => 'Lilac Purple',
-                                'value' => 'lilac_purple',
-                            ],
+                            'lilac_purple',
                         ],
                     ],
                     [
@@ -248,12 +289,7 @@ class ProductSeeder extends Seeder
                             ]
                         ],
                         'attributes' => [
-                            [
-                                'name' => 'Colour',
-                                'slug' => 'colour',
-                                'value_label' => 'Midnight Black',
-                                'value' => 'midnight_black',
-                            ],
+                            'midnight_black',
                         ],
                     ],
                     [
@@ -265,12 +301,7 @@ class ProductSeeder extends Seeder
                             ]
                         ],
                         'attributes' => [
-                            [
-                                'name' => 'Colour',
-                                'slug' => 'colour',
-                                'value_label' => 'Coral Blue',
-                                'value' => 'coral_blue',
-                            ],
+                            'coral_blue',
                         ],
                     ],
                 ],
@@ -280,6 +311,20 @@ class ProductSeeder extends Seeder
                 'sku' => 'SN-010',
                 'description' => "Elegant, trendy, thin and light, it's the best laptop for on-the-go work and entertainment.",
                 'category' => 'samsung',
+                'attributes' => [
+                    [
+                        'slug' => 'color',
+                        'value' => 'aura_glow',
+                    ],
+                    [
+                        'slug' => 'color',
+                        'value' => 'aura_white',
+                    ],
+                    [
+                        'slug' => 'color',
+                        'value' => 'aura_black',
+                    ],
+                ],
                 'variations' => [
                     [
                         'sku' => 'SN-010-aura_glow',
@@ -290,12 +335,7 @@ class ProductSeeder extends Seeder
                             ]
                         ],
                         'attributes' => [
-                            [
-                                'name' => 'Colour',
-                                'slug' => 'colour',
-                                'value_label' => 'Aura Glow',
-                                'value' => 'aura_glow',
-                            ],
+                            'aura_glow',
                         ],
                     ],
                     [
@@ -307,12 +347,7 @@ class ProductSeeder extends Seeder
                             ]
                         ],
                         'attributes' => [
-                            [
-                                'name' => 'Colour',
-                                'slug' => 'colour',
-                                'value_label' => 'Aura White',
-                                'value' => 'aura_white',
-                            ],
+                            'aura_white',
                         ],
                     ],
                     [
@@ -324,12 +359,7 @@ class ProductSeeder extends Seeder
                             ]
                         ],
                         'attributes' => [
-                            [
-                                'name' => 'Colour',
-                                'slug' => 'colour',
-                                'value_label' => 'Aura Black',
-                                'value' => 'aura_black',
-                            ],
+                            'aura_black',
                         ],
                     ],
                 ],
@@ -339,6 +369,20 @@ class ProductSeeder extends Seeder
                 'sku' => 'SG-068',
                 'description' => 'New condition • No returns, but backed by eBay Money back guarantee',
                 'category' => 'samsung',
+                'attributes' => [
+                    [
+                        'slug' => 'color',
+                        'value' => 'blue',
+                    ],
+                    [
+                        'slug' => 'color',
+                        'value' => 'black',
+                    ],
+                    [
+                        'slug' => 'color',
+                        'value' => 'white',
+                    ],
+                ],
                 'variations' => [
                     [
                         'sku' => 'SG-068-blue',
@@ -349,12 +393,7 @@ class ProductSeeder extends Seeder
                             ]
                         ],
                         'attributes' => [
-                            [
-                                'name' => 'Colour',
-                                'slug' => 'colour',
-                                'value_label' => 'Blue',
-                                'value' => 'blue',
-                            ],
+                            'blue',
                         ],
                     ],
                     [
@@ -366,12 +405,7 @@ class ProductSeeder extends Seeder
                             ]
                         ],
                         'attributes' => [
-                            [
-                                'name' => 'Colour',
-                                'slug' => 'colour',
-                                'value_label' => 'Black',
-                                'value' => 'black',
-                            ],
+                            'black',
                         ],
                     ],
                     [
@@ -383,12 +417,7 @@ class ProductSeeder extends Seeder
                             ]
                         ],
                         'attributes' => [
-                            [
-                                'name' => 'Colour',
-                                'slug' => 'colour',
-                                'value_label' => 'White',
-                                'value' => 'white',
-                            ],
+                            'white',
                         ],
                     ],
                 ],
@@ -398,6 +427,16 @@ class ProductSeeder extends Seeder
                 'sku' => 'LG-V10-H900',
                 'description' => 'NETWORK Technology GSM. Protection Corning Gorilla Glass 4. MISC Colors Space Black, Luxe White, Modern Beige, Ocean Blue, Opal Blue. SAR EU 0.59 W/kg (head).',
                 'category' => 'lg',
+                'attributes' => [
+                    [
+                        'slug' => 'color',
+                        'value' => 'opal_blue',
+                    ],
+                    [
+                        'slug' => 'color',
+                        'value' => 'space_black',
+                    ],
+                ],
                 'variations' => [
                     [
                         'sku' => 'LG-V10-H900-opal_blue',
@@ -408,12 +447,7 @@ class ProductSeeder extends Seeder
                             ]
                         ],
                         'attributes' => [
-                            [
-                                'name' => 'Colour',
-                                'slug' => 'colour',
-                                'value_label' => 'Opal Blue',
-                                'value' => 'opal_blue',
-                            ],
+                            'opal_blue',
                         ],
                     ],
                     [
@@ -425,12 +459,7 @@ class ProductSeeder extends Seeder
                             ]
                         ],
                         'attributes' => [
-                            [
-                                'name' => 'Colour',
-                                'slug' => 'colour',
-                                'value_label' => 'Space Black',
-                                'value' => 'space_black',
-                            ],
+                            'space_black',
                         ],
                     ],
                 ],
@@ -440,6 +469,12 @@ class ProductSeeder extends Seeder
                 'sku' => 'HW-E001',
                 'description' => 'Cricket Wireless - Huawei Elate. New Sealed Huawei Elate Smartphone.',
                 'category' => 'huawei',
+                'attributes' => [
+                    [
+                        'slug' => 'color',
+                        'value' => 'gray',
+                    ],
+                ],
                 'variations' => [
                     [
                         'sku' => 'HW-E001-gray',
@@ -450,12 +485,7 @@ class ProductSeeder extends Seeder
                             ]
                         ],
                         'attributes' => [
-                            [
-                                'name' => 'Colour',
-                                'slug' => 'colour',
-                                'value_label' => 'Gray',
-                                'value' => 'gray',
-                            ],
+                            'gray',
                         ],
                     ],
                 ]
@@ -492,24 +522,36 @@ class ProductSeeder extends Seeder
         foreach ($laptops as $data) {
             $productData = $data;
             unset($productData['variations']);
+            unset($productData['attributes']);
             $product = Product::create($productData);
             $product->categories()->attach($laptopCategory->id);
+            $product->attributes()->createMany($attributes);
+            $productAttributes = $product->refresh()->attributes->keyBy('slug');
+            array_map(function ($attribute) use ($productAttributes, $attributeOptions) {
+                $productAttributes[$attribute['slug']]->options()->create($attributeOptions[$attribute['value']]);
+            }, $data['attributes']);
+            $productAttributeOptions = $product->refresh()->attribute_options->keyBy('value');
             foreach ($data['variations'] as $variationData) {
-                $attributeData = $variationData['attributes'];
+                $variationAttributes = $variationData['attributes'];
                 $imageData = $variationData['images'];
                 unset($variationData['attributes']);
                 unset($variationData['images']);
                 $variation = $product->variations()->create($variationData);
-                $variation->attributes()->createMany($attributeData);
+                $attributeData = array_map(function ($option) use ($productAttributeOptions) {
+                    return $productAttributeOptions[$option]->id;
+                }, $variationAttributes);
+                $variation->attribute_options()->sync($attributeData);
                 $variation->images()->createMany($imageData);
             }
         }
-
+        
         foreach ($smartphones as $data) {
             $productData = $data;
-            unset($productData['category']);
             unset($productData['variations']);
+            unset($productData['attributes']);
+            unset($productData['category']);
             $product = Product::create($productData);
+
             if ($data['category'] === 'samsung') {
                 $product->categories()->attach($samsungCategory);
             }
@@ -519,13 +561,23 @@ class ProductSeeder extends Seeder
             if ($data['category'] === 'huawei') {
                 $product->categories()->attach($huaweiCategory);
             }
+
+            $product->attributes()->createMany($attributes);
+            $productAttributes = $product->refresh()->attributes->keyBy('slug');
+            array_map(function ($attribute) use ($productAttributes, $attributeOptions) {
+                $productAttributes[$attribute['slug']]->options()->create($attributeOptions[$attribute['value']]);
+            }, $data['attributes']);
+            $productAttributeOptions = $product->refresh()->attribute_options->keyBy('value');
             foreach ($data['variations'] as $variationData) {
-                $attributeData = $variationData['attributes'];
+                $variationAttributes = $variationData['attributes'];
                 $imageData = $variationData['images'];
                 unset($variationData['attributes']);
                 unset($variationData['images']);
                 $variation = $product->variations()->create($variationData);
-                $variation->attributes()->createMany($attributeData);
+                $attributeData = array_map(function ($option) use ($productAttributeOptions) {
+                    return $productAttributeOptions[$option]->id;
+                }, $variationAttributes);
+                $variation->attribute_options()->sync($attributeData);
                 $variation->images()->createMany($imageData);
             }
         }
