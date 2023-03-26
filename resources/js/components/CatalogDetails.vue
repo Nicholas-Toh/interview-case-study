@@ -1,5 +1,5 @@
 <script setup>
-import { ref, onMounted, computed, watch } from "vue";
+import { reactive, ref, computed, watch } from "vue";
 import { keyBy } from "@utils/array";
 
 const props = defineProps({
@@ -7,30 +7,34 @@ const props = defineProps({
         type: Object,
     },
 });
+let selectedVariation = ref(props.product.variations[0]);
 
-let selectedVariation = ref(null);
-
-onMounted(() => {
-    selectedVariation.value = props.product.variations[0];
-});
 
 const selectedAttributeOptions = computed(() => {
     let options = {};
-    for (let option of selectVariation.attribute_options) {
-        options[option.attribute_id] = option;
+    for (let option of selectedVariation.value.attribute_options) {
+        options[option.product_attribute_id] = option;
     }
     return options;
 });
 
-const selectVariation = (option) => {
-    const selectedOptions = Object.assign({}, selectedAttributeOptions);
-    selectedOptions[option.attribute_id] = option.id;
+const selectedVariationImage = computed(() => {
+    return selectedVariation.value?.images[0].public_path ?? props.product.variations[0]?.images[0].public_path ?? null
+});
 
-    selectedVariation = product.variations.find(
+const selectedVariationSku = computed(() => {
+    return selectedVariation.value?.sku ?? props.product.variations[0]?.sku ?? null
+});
+
+const selectVariation = (option) => {
+    const selectedOptions = Object.assign({}, selectedAttributeOptions.value);
+    selectedOptions[option.product_attribute_id] = reactive(option)
+    selectedVariation.value = props.product.variations.find(
         (variation) => variation.attribute_options.every(
-            (option) => selectedOptions[option.attribute_id] === option.id
+            (option) => selectedOptions[option.product_attribute_id].id === option.id
         )
     );
+
 }
 
 
@@ -38,22 +42,33 @@ const selectVariation = (option) => {
 
 <template>
     <div class="mt-20 px-20 flex flex-row flex-wrap justify-center">
-        <template v-if="selectedVariation">
-            <div class="w-56">
-                <img :src="selectedVariation.images[0].public_path" />
+        <div class="w-56">
+            <img :src="selectedVariationImage" />
+        </div>
+        <div class="w-max ml-20">
+            <div>
+                <h1>{{ props.product.name }}</h1>
+                <h2>{{ selectedVariationSku }}</h2>
             </div>
-            <div class="w-56">
-                <div>
-                    <h1>{{ props.product.name }}</h1>
-                    <h2>{{ selectedVariation.sku }}</h2>
-                </div>
-            </div>
-            <template v-for="attribute in product.attributes">
-                <div>{{ attribute.name }}</div>
-                <template v-for="option in attribute.options">
-                    <div class="box" @click="selectVariation(option)">{{ option.name }}</div>
+            <div class="mt-20">
+                <template v-for="attribute in product.attributes">
+                    <div class="mb-4">
+                        <div class="mb-2">{{ attribute.name }}</div>
+                        <div class="flex flex-row flex-wrap">
+                            <template v-for="option in attribute.options">
+                                <div class="border border-2 border-orange-300 bg-orange-100 rounded-md w-fit p-2 cursor-pointer mr-3 hover:bg-orange-300 hover:color-white"
+                                    :class="{
+                                        'bg-orange-300': selectedAttributeOptions[option.product_attribute_id].id === option.id
+                                    }" @click="selectVariation(option)">
+                                    {{
+                                        option.name
+                                    }}
+                                </div>
+                            </template>
+                        </div>
+                    </div>
                 </template>
-            </template>
-        </template>
+            </div>
+        </div>
     </div>
 </template>
