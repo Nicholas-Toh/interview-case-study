@@ -6,17 +6,8 @@ import { ksort } from "@utils/array.js";
 const catalog = ref([]);
 
 onMounted(async () => {
-    catalog.value = await getData(route("api.catalog")).data;
-
-    let options = [];
-    for (let product of catalog.value) {
-        for (let attribute of product.attributes) {
-            for (let option of attribute.options) {
-                options.push(option.name);
-            }
-            ksort(attribute.options, 'name');
-        }
-    }
+    const response = await getData(route("api.catalog"));
+    catalog.value = response.data;
 });
 </script>
 
@@ -40,7 +31,7 @@ onMounted(async () => {
                         </p>
                     </div>
                     <div class="px-6 pt-4 pb-2">
-                        <template v-for="option in options">
+                        <template v-for="option in product.attribute_options">
                             <span @click=""
                                 class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">
                                 {{ option.name }}</span>
