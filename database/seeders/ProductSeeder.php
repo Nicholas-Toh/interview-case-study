@@ -236,7 +236,7 @@ class ProductSeeder extends Seeder
                         'price' => 3000.00,
                         'images' => [
                             [
-                                'path' => '/images/hp-pavillion-red.jpg'
+                                'path' => '/images/hp-pavillion-silver.jpg'
                             ]
                         ],
                         'attributes' => [
