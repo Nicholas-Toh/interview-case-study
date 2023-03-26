@@ -1,6 +1,6 @@
 <script setup>
 import { reactive, ref, computed, watch } from "vue";
-import { keyBy } from "@utils/array";
+import { ksort } from "@utils/array";
 
 const props = defineProps({
     product: {
@@ -55,7 +55,7 @@ const selectVariation = (option) => {
                     <div class="mb-4">
                         <div class="mb-2">{{ attribute.name }}</div>
                         <div class="flex flex-row flex-wrap">
-                            <template v-for="option in attribute.options">
+                            <template v-for="option in ksort(attribute.options, 'name')">
                                 <div class="border border-2 border-orange-300 bg-orange-100 rounded-md w-fit p-2 cursor-pointer mr-3 hover:bg-orange-300 hover:color-white"
                                     :class="{
                                         'bg-orange-300': selectedAttributeOptions[option.product_attribute_id].id === option.id
